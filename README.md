@@ -1,12 +1,51 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Дневник финансов (Money Journal)
 
-Currently, two official plugins are available:
+Клиентское приложение для ведения личных финансов.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Стек
+- React 19 + Vite
+- Tailwind CSS v4
+- Recharts (графики), lucide-react (иконки)
 
-## Expanding the ESLint configuration
+### Возможности
+- Добавление доходов/расходов, заметки и категории
+- Предпросмотр и фильтрация записей
+- Аналитика по категориям и эмоциям (графики)
+- Локальное хранение в браузере (`localStorage`, ключ `money-diary-v1`)
+- Импорт/экспорт JSON
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Запуск локально
+1. Установить зависимости:
+   ```bash
+   npm install
+   ```
+2. Запустить dev-сервер:
+   ```bash
+   npm run dev
+   ```
+   Откройте http://localhost:5173/
+
+### Сборка и предпросмотр
+- Сборка: `npm run build`
+- Предпросмотр сборки: `npm run preview`
+
+### Деплой
+Если деплой на GitHub Pages внутри репозитория, укажите базовый путь:
+```bash
+# пример для репозитория username/repo
+set VITE_BASE=/repo/
+# или в .env.local: VITE_BASE=/repo/
+```
+
+### Структура
+- `index.html` — HTML-шаблон
+- `src/main.jsx` — вход в приложение
+- `src/App.jsx` — корневой компонент
+- `src/features/money-diary/` — основная функциональность
+- `src/components/ui/` — переиспользуемые UI-компоненты
+
+### Примечания
+- Используется алиас `@` → `./src` (см. `vite.config.js`)
+- Стили Tailwind подключены через `@tailwindcss/postcss`
